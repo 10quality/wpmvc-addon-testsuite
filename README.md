@@ -83,7 +83,7 @@ class MyAddonTest extends TestCase
 
 The example above tests the method `init()` of the addon class `MyAddon`, which receives the `$bridge` initialized as a mock. The example asserts that an action hook has been added and a script has been registered during the method call.
 
-You can mock the `Bridge` to your own purposes like:
+You can mock the `Bridge` for your own benefit:
 ```php
 use WPMVC\Addons\PHPUnit\TestCase;
 use WPMVC\Addons\PHPUnit\Mocks\Brige;
