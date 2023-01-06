@@ -193,3 +193,17 @@ if ( !function_exists( 'get_locale' ) ) {
         return 'en';
     }
 }
+if ( !function_exists( 'home_url' ) ) {
+    /**
+     * Simulate method.
+     * @since 1.0.0
+     * 
+     * @param string $path
+     * 
+     * @return string
+     */
+    function home_url( $path = '/' ) {
+        $GLOBALS['wp_functions']['home_url'] = true;
+        return 'http://localhost'.$path;
+    }
+}

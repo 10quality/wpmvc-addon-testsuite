@@ -100,4 +100,15 @@ class FunctionsTest extends TestCase
         $this->assertArrayHasKey( 'get_locale', $GLOBALS['wp_functions'] );
         $this->assertEquals( 'en', $locale );
     }
+    /**
+     * @group functions
+     */
+    public function testHomeUrl()
+    {
+        $url = home_url();
+        $url2 = home_url( '/test' );
+        $this->assertArrayHasKey( 'home_url', $GLOBALS['wp_functions'] );
+        $this->assertEquals( 'http://localhost/', $url );
+        $this->assertEquals( 'http://localhost/test', $url2 );
+    }
 }
