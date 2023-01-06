@@ -3,6 +3,7 @@
 namespace WPMVC\Addons\PHPUnit;
 
 use PHPUnit\Framework\TestCase as PHPUnitTestCase;
+use WPMVC\Addons\PHPUnit\Mocks\Brige;
 
 /**
  * Custom test case for Addon testing.
@@ -280,5 +281,17 @@ class TestCase extends PHPUnitTestCase
             ),
             $message ?: 'Handlers have been added for filter "' . $handle .'".'
         );
+    }
+    /**
+     * Returns a mocked Brige to initialize an addon.
+     * @since 1.0.0
+     * 
+     * @return \WPMVC\Bridge
+     */
+    public function getBridgeMock()
+    {
+        return $this->getMockBuilder( Brige::class )
+            ->disableOriginalConstructor()
+            ->getMock();
     }
 }

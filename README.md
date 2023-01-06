@@ -56,6 +56,57 @@ class MyTest extends TestCase
 }
 ```
 
+### Test your addon
+
+You addon main class needs a WordPress MVC main class (bridge) instance to work correctly. The `TestCase` class include the method `getBridgeMock()` that allows you to test your addon mocking the Bridge class.
+
+Example:
+```php
+use WPMVC\Addons\PHPUnit\TestCase;
+use MyAddon;
+
+class MyAddonTest extends TestCase
+{
+    public function testInit()
+    {
+        // Prepare
+        $bridge = $this->getBridgeMock();
+        $addon = new MyAddon($bridge);
+        // Run
+        $addon->init();
+        // Assert
+        $this->assertAddedAction( 'init' );
+        $this->assertHasRegisterScript( 'my-js' );
+    }
+}
+```
+
+The example above tests the method `init()` of the addon class `MyAddon`, which receives the `$bridge` initialized as a mock. The example asserts that an action hook has been added and a script has been registered during the method call.
+
+You can mock the `Bridge` to your own purposes like:
+```php
+use WPMVC\Addons\PHPUnit\TestCase;
+use WPMVC\Addons\PHPUnit\Mocks\Brige;
+use MyAddon;
+
+class MyAddonTest extends TestCase
+{
+    public function testInit()
+    {
+        // Prepare
+        $bridge = $this->getMockBuilder( Brige::class )
+            ->disableOriginalConstructor()
+            ->getMock();
+        $addon = new MyAddon($bridge);
+        // Run
+        $addon->init();
+        // Assert
+        $this->assertAddedAction( 'init' );
+        $this->assertHasRegisterScript( 'my-js' );
+    }
+}
+```
+
 ### Reset test suite data
 
 You can reset test suite data by calling the function `wpmvc_addon_phpunit_reset()` inside the `setUp` or `tearDown` methods.
