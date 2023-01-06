@@ -283,6 +283,40 @@ class TestCase extends PHPUnitTestCase
         );
     }
     /**
+     * Asserts if a core WordPress function has been called.
+     * @since 1.0.0
+     * 
+     * @param string $function
+     * @param string $message
+     */
+    public function assertHasCalledWP( $function, $message = null )
+    {
+        self::assertThat(
+            true,
+            self::identicalTo(
+                array_key_exists( $function, $GLOBALS['wp_functions'] )
+            ),
+            $message ?: 'WordPress core function "' . $function .'" has not been called.'
+        );
+    }
+    /**
+     * Asserts if a core WordPress function has been called.
+     * @since 1.0.0
+     * 
+     * @param string $function
+     * @param string $message
+     */
+    public function assertNotHasCalledWP( $function, $message = null )
+    {
+        self::assertThat(
+            false,
+            self::identicalTo(
+                array_key_exists( $function, $GLOBALS['wp_functions'] )
+            ),
+            $message ?: 'WordPress core function "' . $function .'" has been called.'
+        );
+    }
+    /**
      * Returns a mocked Brige to initialize an addon.
      * @since 1.0.0
      * 

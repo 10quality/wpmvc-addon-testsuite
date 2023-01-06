@@ -140,4 +140,19 @@ class TestCaseTest extends TestCase
     {
         $this->assertNotAddedFilter( 'init' );
     }
+    /**
+     * @group asserts
+     */
+    public function testAssertHasCalledWP()
+    {
+        add_submenu_page();
+        $this->assertHasCalledWP( 'add_submenu_page' );
+    }
+    /**
+     * @group asserts
+     */
+    public function testAssertNotHasCalledWP()
+    {
+        $this->assertNotHasCalledWP( 'add_submenu_page' );
+    }
 }

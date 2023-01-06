@@ -39,6 +39,8 @@ This classs will allow you to use the following assertiong methods:
 | `$this->assertNotHasEnqueueStyle` | `$handle` the style hook name handle. | Asserts if a style asset has not been registered. |
 | `$this->assertHasEnqueueScript` | `$handle` the script name handle. | Asserts if a script asset has been enqueued. |
 | `$this->assertNotHasEnqueueScript` | `$handle` the script hook name handle. | Asserts if a script asset has not been enqueued. |
+| `$this->assertHasCalledWP` | `$function` the name of a WordPress core function. | Asserts if a core WordPress function has been called. |
+| `$this->assertNotHasCalledWP` | `$function` the name of a WordPress core function. | Asserts if a core WordPress function has not been called. |
 
 Example:
 ```php
@@ -117,6 +119,7 @@ The following WordPress core functions are mocked and included through composer:
 
 * `add_action`
 * `add_filter`
+* `add_submenu_page`
 * `apply_filters`
 * `do_action`
 * `wp_enqueue_script`

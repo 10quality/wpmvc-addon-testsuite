@@ -83,4 +83,12 @@ class FunctionsTest extends TestCase
         add_filter( 'init' );
         $this->assertArrayHasKey( 'init', $GLOBALS['hooks']['filters']['added'] );
     }
+    /**
+     * @group functions
+     */
+    public function testAddSubmenuPage()
+    {
+        add_submenu_page();
+        $this->assertArrayHasKey( 'add_submenu_page', $GLOBALS['wp_functions'] );
+    }
 }
