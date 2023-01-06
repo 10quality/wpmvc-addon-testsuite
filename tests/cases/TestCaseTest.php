@@ -21,64 +21,64 @@ class TestCaseTest extends TestCase
     /**
      * @group asserts
      */
-    public function testAssertHanRegisterStyle()
+    public function testassertHasRegisterStyle()
     {
         wp_register_style( 'test' );
-        $this->assertHanRegisterStyle( 'test' );
+        $this->assertHasRegisterStyle( 'test' );
     }
     /**
      * @group asserts
      */
-    public function testAssertNotHanRegisterStyle()
+    public function testassertNotHasRegisterStyle()
     {
-        $this->assertNotHanRegisterStyle( 'test2' );
+        $this->assertNotHasRegisterStyle( 'test2' );
     }
     /**
      * @group asserts
      */
-    public function testAssertHanRegisterScript()
+    public function testassertHasRegisterScript()
     {
         wp_register_script( 'test' );
-        $this->assertHanRegisterScript( 'test' );
+        $this->assertHasRegisterScript( 'test' );
     }
     /**
      * @group asserts
      */
-    public function testAssertNotHanRegisterScript()
+    public function testassertNotHasRegisterScript()
     {
-        $this->assertNotHanRegisterScript( 'test2' );
+        $this->assertNotHasRegisterScript( 'test2' );
     }
     /**
      * @group asserts
      */
-    public function testAssertHanEnqueueStyle()
+    public function testassertHasEnqueueStyle()
     {
         wp_enqueue_style( 'test' );
-        $this->assertHanEnqueueStyle( 'test' );
+        $this->assertHasEnqueueStyle( 'test' );
     }
     /**
      * @group asserts
      */
-    public function testAssertNotHanEnqueueStyle()
+    public function testassertNotHasEnqueueStyle()
     {
         wp_register_style( 'test2' );
-        $this->assertNotHanEnqueueStyle( 'test2' );
+        $this->assertNotHasEnqueueStyle( 'test2' );
     }
     /**
      * @group asserts
      */
-    public function testAssertHanEnqueueScript()
+    public function testassertHasEnqueueScript()
     {
         wp_enqueue_script( 'test' );
-        $this->assertHanEnqueueScript( 'test' );
+        $this->assertHasEnqueueScript( 'test' );
     }
     /**
      * @group asserts
      */
-    public function testAssertNotHanEnqueueScript()
+    public function testassertNotHasEnqueueScript()
     {
         wp_register_script( 'test2' );
-        $this->assertNotHanEnqueueScript( 'test2' );
+        $this->assertNotHasEnqueueScript( 'test2' );
     }
     /**
      * @group asserts

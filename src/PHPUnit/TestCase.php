@@ -20,7 +20,7 @@ class TestCase extends PHPUnitTestCase
      * @param string $handle
      * @param string $message
      */
-    public function assertHanRegisterStyle( $handle, $message = null )
+    public function assertHasRegisterStyle( $handle, $message = null )
     {
         self::assertThat(
             true,
@@ -35,7 +35,7 @@ class TestCase extends PHPUnitTestCase
      * @param string $handle
      * @param string $message
      */
-    public function assertNotHanRegisterStyle( $handle, $message = null )
+    public function assertNotHasRegisterStyle( $handle, $message = null )
     {
         self::assertThat(
             false,
@@ -50,7 +50,7 @@ class TestCase extends PHPUnitTestCase
      * @param string $handle
      * @param string $message
      */
-    public function assertHanRegisterScript( $handle, $message = null )
+    public function assertHasRegisterScript( $handle, $message = null )
     {
         self::assertThat(
             true,
@@ -65,7 +65,7 @@ class TestCase extends PHPUnitTestCase
      * @param string $handle
      * @param string $message
      */
-    public function assertNotHanRegisterScript( $handle, $message = null )
+    public function assertNotHasRegisterScript( $handle, $message = null )
     {
         self::assertThat(
             false,
@@ -80,7 +80,7 @@ class TestCase extends PHPUnitTestCase
      * @param string $handle
      * @param string $message
      */
-    public function assertHanEnqueueStyle( $handle, $message = null )
+    public function assertHasEnqueueStyle( $handle, $message = null )
     {
         self::assertThat(
             true,
@@ -98,7 +98,7 @@ class TestCase extends PHPUnitTestCase
      * @param string $handle
      * @param string $message
      */
-    public function assertNotHanEnqueueStyle( $handle, $message = null )
+    public function assertNotHasEnqueueStyle( $handle, $message = null )
     {
         self::assertThat(
             false,
@@ -116,7 +116,7 @@ class TestCase extends PHPUnitTestCase
      * @param string $handle
      * @param string $message
      */
-    public function assertHanEnqueueScript( $handle, $message = null )
+    public function assertHasEnqueueScript( $handle, $message = null )
     {
         self::assertThat(
             true,
@@ -134,7 +134,7 @@ class TestCase extends PHPUnitTestCase
      * @param string $handle
      * @param string $message
      */
-    public function assertNotHanEnqueueScript( $handle, $message = null )
+    public function assertNotHasEnqueueScript( $handle, $message = null )
     {
         self::assertThat(
             false,
