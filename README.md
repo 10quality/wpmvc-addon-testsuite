@@ -56,6 +56,10 @@ class MyTest extends TestCase
 }
 ```
 
+### Reset test suite data
+
+You can reset test suite data by calling the function `wpmvc_addon_phpunit_reset()` inside the `setUp` or `tearDown` methods.
+
 ## WordPress core functions mocked
 
 The following WordPress core functions are mocked and included through composer:

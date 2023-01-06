@@ -38,7 +38,7 @@ $GLOBALS['hooks'] = [
 * Reset globals.
 * @since 1.0.0
 */
-function wpmvc_phpunit_reset() {
+function wpmvc_addon_phpunit_reset() {
     $GLOBALS['assets'] = [
         'styles' => [],
         'scripts' => [],

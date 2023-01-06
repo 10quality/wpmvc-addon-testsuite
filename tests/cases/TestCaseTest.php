@@ -16,7 +16,7 @@ class TestCaseTest extends TestCase
      */
     public function tearDown(): void
     {
-        wpmvc_phpunit_reset();
+        wpmvc_addon_phpunit_reset();
     }
     /**
      * @group asserts
