@@ -175,10 +175,21 @@ if ( !function_exists( 'add_submenu_page' ) ) {
     /**
      * Simulate method.
      * @since 1.0.0
-     * 
-     * @param string $handle
      */
     function add_submenu_page() {
         $GLOBALS['wp_functions']['add_submenu_page'] = true;
+    }
+}
+
+if ( !function_exists( 'get_locale' ) ) {
+    /**
+     * Simulate method.
+     * @since 1.0.0
+     * 
+     * @return string
+     */
+    function get_locale() {
+        $GLOBALS['wp_functions']['get_locale'] = true;
+        return 'en';
     }
 }

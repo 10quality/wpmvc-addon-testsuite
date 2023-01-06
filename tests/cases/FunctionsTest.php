@@ -91,4 +91,13 @@ class FunctionsTest extends TestCase
         add_submenu_page();
         $this->assertArrayHasKey( 'add_submenu_page', $GLOBALS['wp_functions'] );
     }
+    /**
+     * @group functions
+     */
+    public function testGetLocale()
+    {
+        $locale = get_locale();
+        $this->assertArrayHasKey( 'get_locale', $GLOBALS['wp_functions'] );
+        $this->assertEquals( 'en', $locale );
+    }
 }

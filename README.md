@@ -122,6 +122,7 @@ The following WordPress core functions are mocked and included through composer:
 * `add_submenu_page`
 * `apply_filters`
 * `do_action`
+* `get_locale`
 * `wp_enqueue_script`
 * `wp_enqueue_style`
 * `wp_register_script`
