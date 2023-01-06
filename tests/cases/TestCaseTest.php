@@ -16,10 +16,7 @@ class TestCaseTest extends TestCase
      */
     public function tearDown(): void
     {
-        $GLOBALS['assets'] = [
-            'styles' => [],
-            'scripts' => [],
-        ];
+        wpmvc_phpunit_reset();
     }
     /**
      * @group asserts
@@ -82,5 +79,65 @@ class TestCaseTest extends TestCase
     {
         wp_register_script( 'test2' );
         $this->assertNotHanEnqueueScript( 'test2' );
+    }
+    /**
+     * @group asserts
+     */
+    public function testAssertDidAction()
+    {
+        do_action( 'init' );
+        $this->assertDidAction( 'init' );
+    }
+    /**
+     * @group asserts
+     */
+    public function testAssertDidNotAction()
+    {
+        $this->assertDidNotAction( 'init2' );
+    }
+    /**
+     * @group asserts
+     */
+    public function testAssertAppliedFilters()
+    {
+        apply_filters( 'the_value', 123 );
+        $this->assertAppliedFilters( 'the_value' );
+    }
+    /**
+     * @group asserts
+     */
+    public function testAssertNotAppliedFilters()
+    {
+        $this->assertNotAppliedFilters( 'the_value2' );
+    }
+    /**
+     * @group asserts
+     */
+    public function testAssertAddedAction()
+    {
+        add_action( 'init' );
+        $this->assertAddedAction( 'init' );
+    }
+    /**
+     * @group asserts
+     */
+    public function testAssertNotAddedAction()
+    {
+        $this->assertNotAddedAction( 'init' );
+    }
+    /**
+     * @group asserts
+     */
+    public function testAssertAddedFilter()
+    {
+        add_filter( 'init' );
+        $this->assertAddedFilter( 'init' );
+    }
+    /**
+     * @group asserts
+     */
+    public function testAssertNotAddedFilter()
+    {
+        $this->assertNotAddedFilter( 'init' );
     }
 }

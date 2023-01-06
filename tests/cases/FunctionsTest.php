@@ -16,10 +16,7 @@ class FunctionsTest extends TestCase
      */
     public function tearDown(): void
     {
-        $GLOBALS['assets'] = [
-            'styles' => [],
-            'scripts' => [],
-        ];
+        wpmvc_phpunit_reset();
     }
     /**
      * @group functions
@@ -52,5 +49,38 @@ class FunctionsTest extends TestCase
     {
         wp_enqueue_script( 'test' );
         $this->assertArrayHasKey( 'test', $GLOBALS['assets']['scripts'] );
+    }
+    /**
+     * @group functions
+     */
+    public function testDoAction()
+    {
+        do_action( 'init' );
+        $this->assertArrayHasKey( 'init', $GLOBALS['hooks']['actions']['done'] );
+    }
+    /**
+     * @group functions
+     */
+    public function testApplyFilters()
+    {
+        $value = apply_filters( 'test', 123 );
+        $this->assertArrayHasKey( 'test', $GLOBALS['hooks']['filters']['done'] );
+        $this->assertEquals(123, $value);
+    }
+    /**
+     * @group functions
+     */
+    public function testAddAction()
+    {
+        add_action( 'init' );
+        $this->assertArrayHasKey( 'init', $GLOBALS['hooks']['actions']['added'] );
+    }
+    /**
+     * @group functions
+     */
+    public function testAddFilter()
+    {
+        add_filter( 'init' );
+        $this->assertArrayHasKey( 'init', $GLOBALS['hooks']['filters']['added'] );
     }
 }

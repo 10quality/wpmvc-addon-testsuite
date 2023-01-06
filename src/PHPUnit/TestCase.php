@@ -145,4 +145,140 @@ class TestCase extends PHPUnitTestCase
             $message ?: 'The script with the handle "' . $handle .'" has been enqueued.'
         );
     }
+    /**
+     * Asserts if an action ran.
+     * @since 1.0.0
+     * 
+     * @param string $handle
+     * @param string $message
+     */
+    public function assertDidAction( $handle, $message = null )
+    {
+        self::assertThat(
+            true,
+            self::identicalTo(
+                array_key_exists( $handle, $GLOBALS['hooks']['actions']['done'] )
+            ),
+            $message ?: 'The action "' . $handle .'" did not run.'
+        );
+    }
+    /**
+     * Asserts if an action ran.
+     * @since 1.0.0
+     * 
+     * @param string $handle
+     * @param string $message
+     */
+    public function assertDidNotAction( $handle, $message = null )
+    {
+        self::assertThat(
+            false,
+            self::identicalTo(
+                array_key_exists( $handle, $GLOBALS['hooks']['actions']['done'] )
+            ),
+            $message ?: 'The action "' . $handle .'" did run.'
+        );
+    }
+    /**
+     * Asserts if a filter has ran.
+     * @since 1.0.0
+     * 
+     * @param string $handle
+     * @param string $message
+     */
+    public function assertAppliedFilters( $handle, $message = null )
+    {
+        self::assertThat(
+            true,
+            self::identicalTo(
+                array_key_exists( $handle, $GLOBALS['hooks']['filters']['done'] )
+            ),
+            $message ?: 'Filter for "' . $handle .'" have not been applied.'
+        );
+    }
+    /**
+     * Asserts if a filter has ran.
+     * @since 1.0.0
+     * 
+     * @param string $handle
+     * @param string $message
+     */
+    public function assertNotAppliedFilters( $handle, $message = null )
+    {
+        self::assertThat(
+            false,
+            self::identicalTo(
+                array_key_exists( $handle, $GLOBALS['hooks']['filters']['done'] )
+            ),
+            $message ?: 'Filter for "' . $handle .'" have been applied.'
+        );
+    }
+    /**
+     * Asserts if an action has been added.
+     * @since 1.0.0
+     * 
+     * @param string $handle
+     * @param string $message
+     */
+    public function assertAddedAction( $handle, $message = null )
+    {
+        self::assertThat(
+            true,
+            self::identicalTo(
+                array_key_exists( $handle, $GLOBALS['hooks']['actions']['added'] )
+            ),
+            $message ?: 'No handlers have been added for action "' . $handle .'".'
+        );
+    }
+    /**
+     * Asserts if an action has been added.
+     * @since 1.0.0
+     * 
+     * @param string $handle
+     * @param string $message
+     */
+    public function assertNotAddedAction( $handle, $message = null )
+    {
+        self::assertThat(
+            false,
+            self::identicalTo(
+                array_key_exists( $handle, $GLOBALS['hooks']['actions']['added'] )
+            ),
+            $message ?: 'Handlers have been added for action "' . $handle .'".'
+        );
+    }
+    /**
+     * Asserts if a filter has been added.
+     * @since 1.0.0
+     * 
+     * @param string $handle
+     * @param string $message
+     */
+    public function assertAddedFilter( $handle, $message = null )
+    {
+        self::assertThat(
+            true,
+            self::identicalTo(
+                array_key_exists( $handle, $GLOBALS['hooks']['filters']['added'] )
+            ),
+            $message ?: 'No handlers have been added for filter "' . $handle .'".'
+        );
+    }
+    /**
+     * Asserts if a filter has been added.
+     * @since 1.0.0
+     * 
+     * @param string $handle
+     * @param string $message
+     */
+    public function assertNotAddedFilter( $handle, $message = null )
+    {
+        self::assertThat(
+            false,
+            self::identicalTo(
+                array_key_exists( $handle, $GLOBALS['hooks']['filters']['added'] )
+            ),
+            $message ?: 'Handlers have been added for filter "' . $handle .'".'
+        );
+    }
 }
