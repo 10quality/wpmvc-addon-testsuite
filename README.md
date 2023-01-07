@@ -123,6 +123,7 @@ The following WordPress core functions are mocked and included through composer:
 * `add_filter`
 * `add_query_arg`
 * `add_submenu_page`
+* `admin_url`
 * `apply_filters`
 * `do_action`
 * `get_locale`

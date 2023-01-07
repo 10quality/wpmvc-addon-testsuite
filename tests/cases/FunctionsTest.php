@@ -140,4 +140,15 @@ class FunctionsTest extends TestCase
         $this->assertArrayHasKey( 'add_query_arg', $GLOBALS['wp_functions'] );
         $this->assertEquals( 'http://localhost/', $query );
     }
+    /**
+     * @group functions
+     */
+    public function testAdminUrl()
+    {
+        $url = admin_url();
+        $url2 = admin_url( '/test' );
+        $this->assertArrayHasKey( 'admin_url', $GLOBALS['wp_functions'] );
+        $this->assertEquals( 'http://localhost/wp-admin/', $url );
+        $this->assertEquals( 'http://localhost/wp-admin/test', $url2 );
+    }
 }

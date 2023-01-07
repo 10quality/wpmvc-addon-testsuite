@@ -243,3 +243,17 @@ if ( !function_exists( 'add_query_arg' ) ) {
         return 'http://localhost/';
     }
 }
+if ( !function_exists( 'admin_url' ) ) {
+    /**
+     * Simulate WordPress core function.
+     * @since 1.0.0
+     * 
+     * @param string $path
+     * 
+     * @return string
+     */
+    function admin_url( $path = '/' ) {
+        $GLOBALS['wp_functions']['admin_url'] = true;
+        return 'http://localhost/wp-admin'.$path;
+    }
+}
