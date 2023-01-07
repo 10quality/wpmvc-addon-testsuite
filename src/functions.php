@@ -337,3 +337,17 @@ if ( !function_exists( 'sanitize_text_field' ) ) {
         return $value;
     }
 }
+if ( !function_exists( 'site_url' ) ) {
+    /**
+     * Simulate WordPress core function.
+     * @since 1.0.0
+     * 
+     * @param string $path
+     * 
+     * @return string
+     */
+    function site_url( $path = '/' ) {
+        $GLOBALS['wp_functions']['site_url'] = true;
+        return 'http://localhost'.$path;
+    }
+}

@@ -134,6 +134,7 @@ The following WordPress core functions are mocked and included through composer:
 * `get_stylesheet_directory`
 * `home_url`
 * `sanitize_text_field`
+* `site_url`
 * `wp_enqueue_script`
 * `wp_enqueue_style`
 * `wp_register_script`

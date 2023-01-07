@@ -207,4 +207,15 @@ class FunctionsTest extends TestCase
         $this->assertArrayHasKey( 'esc_html_e', $GLOBALS['wp_functions'] );
         $this->assertEquals( 'val', $val );
     }
+    /**
+     * @group functions
+     */
+    public function testSiteUrl()
+    {
+        $url = site_url();
+        $url2 = site_url( '/test' );
+        $this->assertArrayHasKey( 'site_url', $GLOBALS['wp_functions'] );
+        $this->assertEquals( 'http://localhost/', $url );
+        $this->assertEquals( 'http://localhost/test', $url2 );
+    }
 }
