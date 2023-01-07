@@ -178,4 +178,33 @@ class FunctionsTest extends TestCase
         $this->assertArrayHasKey( 'esc_url', $GLOBALS['wp_functions'] );
         $this->assertEquals( 'val', $val );
     }
+    /**
+     * @group functions
+     */
+    public function testEscHtml()
+    {
+        $val = esc_html( 'val' );
+        $this->assertArrayHasKey( 'esc_html', $GLOBALS['wp_functions'] );
+        $this->assertEquals( 'val', $val );
+    }
+    /**
+     * @group functions
+     */
+    public function testSanitizeTextField()
+    {
+        $val = sanitize_text_field( 'val' );
+        $this->assertArrayHasKey( 'sanitize_text_field', $GLOBALS['wp_functions'] );
+        $this->assertEquals( 'val', $val );
+    }
+    /**
+     * @group functions
+     */
+    public function testEscHtmlE()
+    {
+        ob_start();
+        esc_html_e( 'val' );
+        $val = ob_get_clean(); 
+        $this->assertArrayHasKey( 'esc_html_e', $GLOBALS['wp_functions'] );
+        $this->assertEquals( 'val', $val );
+    }
 }

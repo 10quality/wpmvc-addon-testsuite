@@ -127,10 +127,13 @@ The following WordPress core functions are mocked and included through composer:
 * `apply_filters`
 * `do_action`
 * `esc_attr`
+* `esc_html`
+* `esc_html_e`
 * `esc_url`
 * `get_locale`
 * `get_stylesheet_directory`
 * `home_url`
+* `sanitize_text_field`
 * `wp_enqueue_script`
 * `wp_enqueue_style`
 * `wp_register_script`

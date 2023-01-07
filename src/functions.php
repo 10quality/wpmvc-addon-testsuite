@@ -297,3 +297,43 @@ if ( !function_exists( 'esc_url' ) ) {
         return $value;
     }
 }
+if ( !function_exists( 'esc_html' ) ) {
+    /**
+     * Simulate WordPress core function.
+     * @since 1.0.0
+     * 
+     * @param string $value
+     * 
+     * @return string
+     */
+    function esc_html( $value ) {
+        $GLOBALS['wp_functions']['esc_html'] = true;
+        return $value;
+    }
+}
+if ( !function_exists( 'esc_html_e' ) ) {
+    /**
+     * Simulate WordPress core function.
+     * @since 1.0.0
+     * 
+     * @param string $value
+     */
+    function esc_html_e( $value ) {
+        $GLOBALS['wp_functions']['esc_html_e'] = true;
+        echo $value;
+    }
+}
+if ( !function_exists( 'sanitize_text_field' ) ) {
+    /**
+     * Simulate WordPress core function.
+     * @since 1.0.0
+     * 
+     * @param string $value
+     * 
+     * @return string
+     */
+    function sanitize_text_field( $value ) {
+        $GLOBALS['wp_functions']['sanitize_text_field'] = true;
+        return $value;
+    }
+}
