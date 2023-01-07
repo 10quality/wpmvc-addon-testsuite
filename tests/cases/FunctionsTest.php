@@ -131,4 +131,13 @@ class FunctionsTest extends TestCase
         $this->assertArrayHasKey( '_e', $GLOBALS['wp_functions'] );
         $this->assertEquals( 'Text', $text );
     }
+    /**
+     * @group functions
+     */
+    public function testAddQueryArg()
+    {
+        $query = add_query_arg();
+        $this->assertArrayHasKey( 'add_query_arg', $GLOBALS['wp_functions'] );
+        $this->assertEquals( 'http://localhost/', $query );
+    }
 }

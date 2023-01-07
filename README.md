@@ -121,6 +121,7 @@ The following WordPress core functions are mocked and included through composer:
 * `_e`
 * `add_action`
 * `add_filter`
+* `add_query_arg`
 * `add_submenu_page`
 * `apply_filters`
 * `do_action`

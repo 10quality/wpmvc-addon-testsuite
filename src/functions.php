@@ -212,7 +212,7 @@ if ( !function_exists( '__' ) ) {
      * Simulate WordPress core function.
      * @since 1.0.0
      * 
-     * @param string $path
+     * @param string $text
      * 
      * @return string
      */
@@ -226,12 +226,20 @@ if ( !function_exists( '_e' ) ) {
      * Simulate WordPress core function.
      * @since 1.0.0
      * 
-     * @param string $path
-     * 
-     * @return string
+     * @param string $text
      */
     function _e( $text ) {
         $GLOBALS['wp_functions']['_e'] = true;
         echo $text;
+    }
+}
+if ( !function_exists( 'add_query_arg' ) ) {
+    /**
+     * Simulate WordPress core function.
+     * @since 1.0.0
+     */
+    function add_query_arg() {
+        $GLOBALS['wp_functions']['add_query_arg'] = true;
+        return 'http://localhost/';
     }
 }
