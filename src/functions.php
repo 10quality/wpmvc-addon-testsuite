@@ -269,3 +269,31 @@ if ( !function_exists( 'get_stylesheet_directory' ) ) {
         return __DIR__;
     }
 }
+if ( !function_exists( 'esc_attr' ) ) {
+    /**
+     * Simulate WordPress core function.
+     * @since 1.0.0
+     * 
+     * @param string $value
+     * 
+     * @return string
+     */
+    function esc_attr( $value ) {
+        $GLOBALS['wp_functions']['esc_attr'] = true;
+        return $value;
+    }
+}
+if ( !function_exists( 'esc_url' ) ) {
+    /**
+     * Simulate WordPress core function.
+     * @since 1.0.0
+     * 
+     * @param string $value
+     * 
+     * @return string
+     */
+    function esc_url( $value ) {
+        $GLOBALS['wp_functions']['esc_url'] = true;
+        return $value;
+    }
+}

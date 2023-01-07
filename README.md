@@ -126,6 +126,8 @@ The following WordPress core functions are mocked and included through composer:
 * `admin_url`
 * `apply_filters`
 * `do_action`
+* `esc_attr`
+* `esc_url`
 * `get_locale`
 * `get_stylesheet_directory`
 * `home_url`

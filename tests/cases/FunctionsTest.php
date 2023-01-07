@@ -160,4 +160,22 @@ class FunctionsTest extends TestCase
         $this->assertArrayHasKey( 'get_stylesheet_directory', $GLOBALS['wp_functions'] );
         $this->assertNotEmpty( $dir );
     }
+    /**
+     * @group functions
+     */
+    public function testEscAttr()
+    {
+        $val = esc_attr( 'val' );
+        $this->assertArrayHasKey( 'esc_attr', $GLOBALS['wp_functions'] );
+        $this->assertEquals( 'val', $val );
+    }
+    /**
+     * @group functions
+     */
+    public function testEscUrl()
+    {
+        $val = esc_url( 'val' );
+        $this->assertArrayHasKey( 'esc_url', $GLOBALS['wp_functions'] );
+        $this->assertEquals( 'val', $val );
+    }
 }
