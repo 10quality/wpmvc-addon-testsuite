@@ -257,3 +257,15 @@ if ( !function_exists( 'admin_url' ) ) {
         return 'http://localhost/wp-admin'.$path;
     }
 }
+if ( !function_exists( 'get_stylesheet_directory' ) ) {
+    /**
+     * Simulate WordPress core function.
+     * @since 1.0.0
+     * 
+     * @return string
+     */
+    function get_stylesheet_directory() {
+        $GLOBALS['wp_functions']['get_stylesheet_directory'] = true;
+        return __DIR__;
+    }
+}

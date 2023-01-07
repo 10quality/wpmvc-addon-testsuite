@@ -151,4 +151,13 @@ class FunctionsTest extends TestCase
         $this->assertEquals( 'http://localhost/wp-admin/', $url );
         $this->assertEquals( 'http://localhost/wp-admin/test', $url2 );
     }
+    /**
+     * @group functions
+     */
+    public function testGetStylesheetDirectory()
+    {
+        $dir = get_stylesheet_directory();
+        $this->assertArrayHasKey( 'get_stylesheet_directory', $GLOBALS['wp_functions'] );
+        $this->assertNotEmpty( $dir );
+    }
 }

@@ -127,6 +127,7 @@ The following WordPress core functions are mocked and included through composer:
 * `apply_filters`
 * `do_action`
 * `get_locale`
+* `get_stylesheet_directory`
 * `home_url`
 * `wp_enqueue_script`
 * `wp_enqueue_style`
