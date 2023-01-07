@@ -111,4 +111,24 @@ class FunctionsTest extends TestCase
         $this->assertEquals( 'http://localhost/', $url );
         $this->assertEquals( 'http://localhost/test', $url2 );
     }
+    /**
+     * @group functions
+     */
+    public function testLocalization()
+    {
+        $text = __( 'Text' );
+        $this->assertArrayHasKey( '__', $GLOBALS['wp_functions'] );
+        $this->assertEquals( 'Text', $text );
+    }
+    /**
+     * @group functions
+     */
+    public function testLocalizationWithEcho()
+    {
+        ob_start();
+        _e( 'Text' );
+        $text = ob_get_clean(); 
+        $this->assertArrayHasKey( '_e', $GLOBALS['wp_functions'] );
+        $this->assertEquals( 'Text', $text );
+    }
 }

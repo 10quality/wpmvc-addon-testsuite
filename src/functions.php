@@ -117,7 +117,7 @@ if ( !function_exists( 'wp_enqueue_script' ) ) {
 
 if ( !function_exists( 'do_action' ) ) {
     /**
-     * Simulate method.
+     * Simulate WordPress core function.
      * @since 1.0.0
      * 
      * @param string $handle
@@ -130,7 +130,7 @@ if ( !function_exists( 'do_action' ) ) {
 
 if ( !function_exists( 'apply_filters' ) ) {
     /**
-     * Simulate method.
+     * Simulate WordPress core function.
      * @since 1.0.0
      * 
      * @param string $handle
@@ -147,7 +147,7 @@ if ( !function_exists( 'apply_filters' ) ) {
 
 if ( !function_exists( 'add_action' ) ) {
     /**
-     * Simulate method.
+     * Simulate WordPress core function.
      * @since 1.0.0
      * 
      * @param string $handle
@@ -160,7 +160,7 @@ if ( !function_exists( 'add_action' ) ) {
 
 if ( !function_exists( 'add_filter' ) ) {
     /**
-     * Simulate method.
+     * Simulate WordPress core function.
      * @since 1.0.0
      * 
      * @param string $handle
@@ -173,7 +173,7 @@ if ( !function_exists( 'add_filter' ) ) {
 
 if ( !function_exists( 'add_submenu_page' ) ) {
     /**
-     * Simulate method.
+     * Simulate WordPress core function.
      * @since 1.0.0
      */
     function add_submenu_page() {
@@ -183,7 +183,7 @@ if ( !function_exists( 'add_submenu_page' ) ) {
 
 if ( !function_exists( 'get_locale' ) ) {
     /**
-     * Simulate method.
+     * Simulate WordPress core function.
      * @since 1.0.0
      * 
      * @return string
@@ -195,7 +195,7 @@ if ( !function_exists( 'get_locale' ) ) {
 }
 if ( !function_exists( 'home_url' ) ) {
     /**
-     * Simulate method.
+     * Simulate WordPress core function.
      * @since 1.0.0
      * 
      * @param string $path
@@ -205,5 +205,33 @@ if ( !function_exists( 'home_url' ) ) {
     function home_url( $path = '/' ) {
         $GLOBALS['wp_functions']['home_url'] = true;
         return 'http://localhost'.$path;
+    }
+}
+if ( !function_exists( '__' ) ) {
+    /**
+     * Simulate WordPress core function.
+     * @since 1.0.0
+     * 
+     * @param string $path
+     * 
+     * @return string
+     */
+    function __( $text ) {
+        $GLOBALS['wp_functions']['__'] = true;
+        return $text;
+    }
+}
+if ( !function_exists( '_e' ) ) {
+    /**
+     * Simulate WordPress core function.
+     * @since 1.0.0
+     * 
+     * @param string $path
+     * 
+     * @return string
+     */
+    function _e( $text ) {
+        $GLOBALS['wp_functions']['_e'] = true;
+        echo $text;
     }
 }

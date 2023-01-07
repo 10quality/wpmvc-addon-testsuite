@@ -117,6 +117,8 @@ You can reset test suite data by calling the function `wpmvc_addon_phpunit_reset
 
 The following WordPress core functions are mocked and included through composer:
 
+* `__`
+* `_e`
 * `add_action`
 * `add_filter`
 * `add_submenu_page`
