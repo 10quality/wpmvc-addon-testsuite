@@ -139,3 +139,9 @@ The following WordPress core functions are mocked and included through composer:
 * `wp_enqueue_style`
 * `wp_register_script`
 * `wp_register_style`
+
+## WordPress core constants mocked
+
+The following constants are mocked through composer if they are not defined:
+
+* `ABSPATH`

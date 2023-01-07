@@ -63,6 +63,9 @@ function wpmvc_addon_phpunit_reset() {
     $GLOBALS['wp_functions'] = [];
 }
 
+if ( !defined( 'ABSPATH' ) )
+    define( 'ABSPATH', __DIR__ );
+
 if ( !function_exists( 'wp_register_style' ) ) {
     /**
      * Simulate style registration.

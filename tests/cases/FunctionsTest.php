@@ -19,6 +19,14 @@ class FunctionsTest extends TestCase
         wpmvc_addon_phpunit_reset();
     }
     /**
+     * @group const
+     */
+    public function testAbspath()
+    {
+        $this->assertTrue( defined( 'ABSPATH' ) );
+        $this->assertNotEmpty( ABSPATH );
+    }
+    /**
      * @group functions
      */
     public function testWpRegisterStyle()
