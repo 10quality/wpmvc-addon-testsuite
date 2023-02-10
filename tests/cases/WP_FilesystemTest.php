@@ -27,4 +27,14 @@ class WP_FilesystemTest extends TestCase
         $this->assertTrue( method_exists( $fs, 'is_file' ) );
         $this->assertTrue( method_exists( $fs, 'exists' ) );
     }
+    /**
+     * @group globals
+     */
+    public function test_global()
+    {
+        // Prepare
+        global $wp_filesystem;
+        // Assert
+        $this->assertInstanceOf( WP_Filesystem::class, $wp_filesystem );
+    }
 }

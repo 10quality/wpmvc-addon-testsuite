@@ -42,6 +42,13 @@ $GLOBALS['hooks'] = [
 $GLOBALS['wp_functions'] = [];
 
 /**
+ * Mimic WP.
+ * @since 1.0.0
+ * @var \WP_Filesystem
+ */
+$GLOBALS['wp_filesystem'] = new WP_Filesystem;
+
+/**
 * Reset globals.
 * @since 1.0.0
 */
