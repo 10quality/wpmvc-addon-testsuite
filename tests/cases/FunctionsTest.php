@@ -226,4 +226,40 @@ class FunctionsTest extends TestCase
         $this->assertEquals( 'http://localhost/', $url );
         $this->assertEquals( 'http://localhost/test', $url2 );
     }
+    /**
+     * @group functions
+     */
+    public function test_get_filesystem_method()
+    {
+        $value = get_filesystem_method();
+        $this->assertArrayHasKey( 'get_filesystem_method', $GLOBALS['wp_functions'] );
+        $this->assertEquals( 'direct', $value );
+    }
+    /**
+     * @group functions
+     */
+    public function test_request_filesystem_credentials()
+    {
+        $value = request_filesystem_credentials();
+        $this->assertArrayHasKey( 'request_filesystem_credentials', $GLOBALS['wp_functions'] );
+        $this->assertTrue( $value );
+    }
+    /**
+     * @group functions
+     */
+    public function test_WP_Filesystem()
+    {
+        $value = WP_Filesystem();
+        $this->assertArrayHasKey( 'WP_Filesystem', $GLOBALS['wp_functions'] );
+        $this->assertTrue( $value );
+    }
+    /**
+     * @group functions
+     */
+    public function test_submit_button()
+    {
+        $value = submit_button();
+        $this->assertArrayHasKey( 'submit_button', $GLOBALS['wp_functions'] );
+        $this->assertEquals( '<button></button>', $value );
+    }
 }

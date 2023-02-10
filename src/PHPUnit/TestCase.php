@@ -3,6 +3,7 @@
 namespace WPMVC\Addons\PHPUnit;
 
 use PHPUnit\Framework\TestCase as PHPUnitTestCase;
+use WPMVC\Config;
 use WPMVC\Addons\PHPUnit\Mocks\Brige;
 
 /**
@@ -327,5 +328,22 @@ class TestCase extends PHPUnitTestCase
         return $this->getMockBuilder( Brige::class )
             ->disableOriginalConstructor()
             ->getMock();
+    }
+    /**
+     * Returns a mocked Config with a specific return value.
+     * @since 1.0.0
+     * 
+     * @param mixed $return
+     * 
+     * @return \WPMVC\Config
+     */
+    public function getConfigMock($return)
+    {
+        $mock = $this->getMockBuilder( Config::class )
+            ->disableOriginalConstructor()
+            ->getMock();
+        $mock->method( 'get' )
+            ->willReturn( $return );
+        return $mock;
     }
 }

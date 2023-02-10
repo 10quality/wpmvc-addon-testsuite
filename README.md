@@ -73,7 +73,7 @@ class MyAddonTest extends TestCase
     {
         // Prepare
         $bridge = $this->getBridgeMock();
-        $addon = new MyAddon($bridge);
+        $addon = new MyAddon( $bridge );
         // Run
         $addon->init();
         // Assert
@@ -99,7 +99,7 @@ class MyAddonTest extends TestCase
         $bridge = $this->getMockBuilder( Brige::class )
             ->disableOriginalConstructor()
             ->getMock();
-        $addon = new MyAddon($bridge);
+        $addon = new MyAddon( $bridge );
         // Run
         $addon->init();
         // Assert
@@ -130,18 +130,28 @@ The following WordPress core functions are mocked and included through composer:
 * `esc_html`
 * `esc_html_e`
 * `esc_url`
+* `get_filesystem_method`
 * `get_locale`
 * `get_stylesheet_directory`
 * `home_url`
+* `request_filesystem_credentials`
 * `sanitize_text_field`
 * `site_url`
+* `submit_button`
 * `wp_enqueue_script`
 * `wp_enqueue_style`
 * `wp_register_script`
 * `wp_register_style`
+* `WP_Filesystem`
 
 ## WordPress core constants mocked
 
 The following constants are mocked through composer if they are not defined:
 
 * `ABSPATH`
+
+## WordPress core classes mocked
+
+The following WordPress classes are mocked and included through composer:
+
+* `WP_Filesystem`

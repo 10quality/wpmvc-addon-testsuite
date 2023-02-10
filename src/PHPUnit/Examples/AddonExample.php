@@ -23,4 +23,12 @@ class AddonExample extends Addon
             // Does nothing
         } );
     }
+    /**
+     * Returns main.
+     * @since 1.0.0
+     */
+    public function get_main()
+    {
+        return $this->main;
+    }
 }

@@ -26,10 +26,24 @@ class AddonTest extends TestCase
     {
         // Prepare
         $bridge = $this->getBridgeMock();
-        $addon = new AddonExample($bridge);
+        $addon = new AddonExample( $bridge );
         // Run
         $addon->init();
         // Assert
         $this->assertAddedAction( 'init' );
+    }
+    /**
+     * @group addon
+     */
+    public function testConfigMock()
+    {
+        // Prepare
+        $bridge = $this->getBridgeMock();
+        $bridge->config = $this->getConfigMock( 123 );
+        $addon = new AddonExample( $bridge );
+        // Run
+        $value = $addon->get_main()->config->get( 'test' );
+        // Assert
+        $this->assertEquals( 123, $value );
     }
 }

@@ -15,9 +15,17 @@
         "files": [
             "src/functions.php"
         ],
+        "classmap": [
+            "src/Global"
+        ],
         "psr-4": {
             "WPMVC\\Addons\\PHPUnit\\": "src/PHPUnit/"
         }
+    },
+    "scripts": {
+        "test": [
+            "phpunit"
+        ]
     },
     "minimum-stability": "dev"
 }
